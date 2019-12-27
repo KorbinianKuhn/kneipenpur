@@ -1,28 +1,28 @@
-@import "~@angular/material/theming";
+@import '~@angular/material/theming';
 
 @font-face {
-  font-family: "KneipenpurFont";
+  font-family: 'KneipenpurFont';
   font-style: normal;
   font-weight: normal;
-  src: url("./assets/fonts/Source.ttf");
+  src: url('./assets/fonts/Source.ttf');
 }
 
 @font-face {
-  font-family: "KneipenpurFont";
+  font-family: 'KneipenpurFont';
   font-style: normal;
   font-weight: bold;
-  src: url("./assets/fonts/Source-Bold.ttf");
+  src: url('./assets/fonts/Source-Bold.ttf');
 }
 
 @font-face {
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
   src: url(./assets/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"),
-    url(./assets/fonts/MaterialIcons-Regular.woff2) format("woff2"),
-    url(./assets/fonts/MaterialIcons-Regular.woff) format("woff"),
-    url(./assets/fonts/MaterialIcons-Regular.ttf) format("truetype");
+  src: local('Material Icons'), local('MaterialIcons-Regular'),
+    url(./assets/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+    url(./assets/fonts/MaterialIcons-Regular.woff) format('woff'),
+    url(./assets/fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 body {
@@ -31,7 +31,7 @@ body {
 }
 
 .material-icons {
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
   font-size: 24px; /* Preferred icon size */
@@ -52,9 +52,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* Support for IE. */
-  font-feature-settings: "liga";
+  font-feature-settings: 'liga';
 }
 
 .bold {
   font-weight: bold;
+}
+
+a,
+a:active,
+a:visited,
+a:focus {
+  color: var(--color-text);
 }

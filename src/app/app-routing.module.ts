@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./routes/tour-list/tour-list.module').then(mod => mod.TourListModule)
   },
   {
+    path: 'info',
+    loadChildren: () => import('./routes/info/info.module').then(mod => mod.InfoModule)
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }

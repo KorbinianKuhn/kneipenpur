@@ -9,6 +9,7 @@ export interface Bar {
   id: number;
   title: string;
   checked?: boolean;
+  location?: string;
 }
 
 export interface StoredTourBar {

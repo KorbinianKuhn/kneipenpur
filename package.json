@@ -1,11 +1,12 @@
 {
   "name": "kneipenpur",
-  "version": "0.0.0",
+  "version": "1.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "start:server": "http-server -p 8080 -c-1 dist",
-    "build": "ng build --prod"
+    "build": "ng build --prod",
+    "increment:versions": "bash scripts/update-versions.sh && git add package.json package-lock.json src/app/constants/version.ts"
   },
   "private": true,
   "dependencies": {
@@ -38,7 +39,9 @@
     "@types/lodash": "^4.14.149",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "fs-extra": "^8.1.0",
     "http-server": "^0.12.0",
+    "husky": "^3.1.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -49,6 +52,12 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "xml2js": "^0.4.23"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run increment:versions"
+    }
   }
 }

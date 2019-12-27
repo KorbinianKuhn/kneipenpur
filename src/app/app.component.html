@@ -1,12 +1,12 @@
 <router-outlet></router-outlet>
-<div class="buttons">
-  <button mat-icon-button class="round" [routerLink]="['/manifest']">
+<div *ngIf="showMenu" class="buttons">
+  <button mat-icon-button class="round" [routerLink]="['/manifest']" routerLinkActive="active">
     <mat-icon>school</mat-icon>
   </button>
-  <button mat-icon-button class="round" [routerLink]="['/touren']">
-    <mat-icon svgIcon="custom_location"></mat-icon>
+  <button mat-icon-button class="round" [routerLink]="['/touren']" routerLinkActive="active">
+    <mat-icon svgIcon="custom_logo"></mat-icon>
   </button>
-  <button mat-icon-button class="round" [routerLink]="['/info']">
-    <mat-icon>info</mat-icon>
+  <button mat-icon-button class="round" [routerLink]="['/info']" routerLinkActive="active">
+    <mat-icon>live_help</mat-icon>
   </button>
 </div>

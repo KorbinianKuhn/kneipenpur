@@ -6,7 +6,6 @@
   display: flex;
   justify-content: center;
   background: var(--color-dark);
-  padding: 10px;
   button {
     margin: 10px;
   }
@@ -17,4 +16,8 @@ button.round {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+}
+
+button.active {
+  color: var(--color-primary);
 }

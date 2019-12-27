@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer, Meta } from '@angular/platform-browser';
+import { SwUpdate } from '@angular/service-worker';
+import { CountdownService, CountdownState } from './services/countdown.service';
 
 const CUSTOM_ICONS = ['logo', 'location'];
 
@@ -10,7 +12,15 @@ const CUSTOM_ICONS = ['logo', 'location'];
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(meta: Meta, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
+  public showMenu: boolean;
+
+  constructor(
+    meta: Meta,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer,
+    private swUpdate: SwUpdate,
+    private countdownService: CountdownService
+  ) {
     meta.addTags([
       { name: 'author', content: 'Kneipenpur' },
       {
@@ -29,5 +39,22 @@ export class AppComponent {
         this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/icons/${icon}.svg`)
       );
     }
+
+    this.swUpdate.available.subscribe(() => {
+      swUpdate
+        .activateUpdate()
+        .then(() => {
+          console.log('pwa update activated');
+          document.location.reload();
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    });
+
+    this.showMenu = !this.countdownService.state.show;
+    this.countdownService.changed.subscribe((event: CountdownState) => {
+      this.showMenu = !event.show;
+    });
   }
 }

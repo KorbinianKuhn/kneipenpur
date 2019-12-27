@@ -10,12 +10,21 @@ export class DataService {
   public tours: Tour[];
 
   constructor(private storageService: StorageService) {
-    const store: StoredTourBar[] = this.storageService.getFromLocalStorage('bars', []);
-
     this.tours = TOURS;
 
-    for (const bar of store) {
-      this.tours.find(o => o.id === bar.tourId).bars.find(b => b.id === bar.barId).checked = bar.checked;
+    try {
+      const store: StoredTourBar[] = this.storageService.getFromLocalStorage('bars', []);
+      for (const bar of store) {
+        const tour = this.tours.find(o => o.id === bar.tourId);
+        if (tour) {
+          const item = tour.bars.find(b => b.id === bar.barId);
+          if (item) {
+            item.checked = bar.checked;
+          }
+        }
+      }
+    } catch (err) {
+      console.error(err);
     }
   }
 

@@ -17,34 +17,3 @@ button.logo {
     margin-right: 15px;
   }
 }
-
-.countdown-wrapper {
-  display: flex;
-  min-width: 100vw;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.countdown {
-  display: flex;
-}
-
-.countdown-item {
-  display: flex;
-  flex-direction: column;
-  width: 60px;
-  margin: 5px;
-  align-items: center;
-
-  .big {
-    font-size: 40px;
-    line-height: 40px;
-  }
-
-  .small {
-    font-size: 14px;
-    opacity: 0.5;
-  }
-}

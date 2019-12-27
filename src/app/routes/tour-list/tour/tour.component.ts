@@ -21,4 +21,8 @@ export class TourComponent implements OnInit {
     bar.checked = state;
     this.dataService.saveState();
   }
+
+  openUrl(url: string) {
+    window.open(url, '_blank');
+  }
 }
