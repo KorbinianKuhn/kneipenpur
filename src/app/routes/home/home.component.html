@@ -1,0 +1,37 @@
+<ng-container [ngSwitch]="showCountdown">
+  <ng-container *ngSwitchCase="false">
+    <div class="wrapper">
+      <div>
+        <button mat-stroked-button [routerLink]="['/manifest']" class="logo">
+          <div class="flex align-center">
+            <mat-icon svgIcon="custom_logo"></mat-icon>
+            kneipenpur
+          </div>
+        </button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="true">
+    <div class="countdown-wrapper">
+      <div class="countdown">
+        <div class="countdown-item">
+          <span class="small">Tage</span>
+          <span class="big"> {{ days }}</span>
+        </div>
+        <div class="countdown-item">
+          <span class="small">Stunden</span>
+          <span class="big"> {{ hours }}</span>
+        </div>
+        <div class="countdown-item">
+          <span class="small">Minuten</span>
+          <span class="big"> {{ minutes }}</span>
+        </div>
+        <div class="countdown-item">
+          <span class="small">Sekunden</span>
+          <span class="big"> {{ seconds }}</span>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

@@ -1,0 +1,17 @@
+{
+  "parser": "typescript",
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "printWidth": 120,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": { "parser": "angular" }
+    },
+    {
+      "files": "*.scss",
+      "options": { "parser": "css" }
+    }
+  ]
+}

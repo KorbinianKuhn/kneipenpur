@@ -1,0 +1,14 @@
+<app-header [routerLink]="['/touren']" [title]="tour.title"></app-header>
+
+<div class="content-wrapper">
+  <div class="content">
+    <div class="flex justify-center" style="transform: translateY(-20px);">
+      <app-tour-progress [bars]="tour.bars"></app-tour-progress>
+    </div>
+
+    <div *ngFor="let bar of tour.bars; let i = index" class="item">
+      <span>{{ i + 1 }}. {{ bar.title }}</span>
+      <app-beer-toggle [checked]="bar.checked" (changed)="onBarChanged(bar, $event)"></app-beer-toggle>
+    </div>
+  </div>
+</div>

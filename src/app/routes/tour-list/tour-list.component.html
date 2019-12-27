@@ -1,0 +1,16 @@
+<app-header title="Kneipentouren"></app-header>
+
+<div class="content-wrapper">
+  <div class="content">
+    <div *ngFor="let tour of tours" class="button-wrapper">
+      <button mat-stroked-button [routerLink]="[tour.id]">
+        <div class="flex flex-col align-center">
+          <span class="flex-1">
+            {{ tour.title }}
+          </span>
+          <app-tour-progress [bars]="tour.bars"></app-tour-progress>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

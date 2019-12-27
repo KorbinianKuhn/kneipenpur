@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.mat-drawer-container {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.content-wrapper {
+  width: calc(100% - 40px);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 70px;
+  padding-top: 70px;
+}
+
+.content {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
