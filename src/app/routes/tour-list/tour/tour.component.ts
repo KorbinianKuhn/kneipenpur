@@ -22,6 +22,11 @@ export class TourComponent implements OnInit {
     this.dataService.saveState();
   }
 
+  onRatingChanged(bar: Bar, rating: number) {
+    bar.rating = rating;
+    this.dataService.saveState();
+  }
+
   openUrl(url: string) {
     window.open(url, '_blank');
   }

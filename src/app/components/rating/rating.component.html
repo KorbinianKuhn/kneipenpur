@@ -1,0 +1,8 @@
+<mat-icon
+  *ngFor="let star of stars"
+  [color]="star <= rating ? 'primary' : 'secondary'"
+  (tap)="onClick(star)"
+  (press)="onPress(star)"
+>
+  {{ star <= rating ? 'star' : 'star_border' }}
+</mat-icon>

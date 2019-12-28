@@ -7,7 +7,10 @@
     </div>
 
     <div *ngFor="let bar of tour.bars; let i = index" class="item">
-      <span class="flex-1">{{ i + 1 }}. {{ bar.title }}</span>
+      <div class="flex flex-col flex-1">
+        <span class="flex-1">{{ i + 1 }}. {{ bar.title }}</span>
+        <app-rating [rating]="bar.rating" style="margin-top: 5px" (changed)="onRatingChanged(bar, $event)"></app-rating>
+      </div>
       <app-map *ngIf="bar.location" [bar]="bar"></app-map>
       <app-beer-toggle [checked]="bar.checked" (changed)="onBarChanged(bar, $event)"></app-beer-toggle>
     </div>

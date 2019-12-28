@@ -20,6 +20,7 @@ export class DataService {
           const item = tour.bars.find(b => b.id === bar.barId);
           if (item) {
             item.checked = bar.checked;
+            item.rating = bar.rating;
           }
         }
       }
@@ -43,12 +44,11 @@ export class DataService {
         store.push({
           tourId: tour.id,
           barId: bar.id,
-          checked: bar.checked
+          checked: bar.checked,
+          rating: bar.rating
         });
       }
     }
-
-    console.log('saveState');
 
     this.storageService.storeInLocalStorage('bars', store);
   }

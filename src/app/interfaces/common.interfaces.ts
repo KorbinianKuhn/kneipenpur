@@ -10,10 +10,12 @@ export interface Bar {
   title: string;
   checked?: boolean;
   location?: string;
+  rating?: number;
 }
 
 export interface StoredTourBar {
   tourId: string;
   barId: number;
   checked: boolean;
+  rating: number;
 }
