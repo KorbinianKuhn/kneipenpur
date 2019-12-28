@@ -1,7 +1,7 @@
 {
   "name": "kneipenpur",
   "short_name": "kneipenpur",
-  "theme_color": "#1976d2",
+  "theme_color": "#111111",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
