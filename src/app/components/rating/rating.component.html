@@ -1,6 +1,6 @@
 <mat-icon
   *ngFor="let star of stars"
-  [color]="star <= rating ? 'primary' : 'secondary'"
+  [color]="star <= rating ? 'primary' : 'accent'"
   (tap)="onClick(star)"
   (press)="onPress()"
 >
