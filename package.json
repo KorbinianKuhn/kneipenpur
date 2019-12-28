@@ -1,11 +1,12 @@
 {
   "name": "kneipenpur",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "start:server": "http-server -p 8080 -c-1 dist",
     "build": "ng build --prod",
+    "deploy": "ng build --prod && firebase deploy",
     "increment:versions": "bash scripts/update-versions.sh && git add package.json package-lock.json src/app/constants/version.ts"
   },
   "private": true,
