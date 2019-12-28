@@ -10,10 +10,15 @@
 button.logo {
   height: 70px;
   width: 200px;
-  font-size: 1.3rem;
 
   mat-icon {
-    margin-left: 10px;
     margin-right: 15px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
   }
 }
