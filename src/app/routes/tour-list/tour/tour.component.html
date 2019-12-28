@@ -1,11 +1,11 @@
-<app-header [routerLink]="['/touren']" [title]="tour.title"></app-header>
+<app-header [routerLink]="['/touren']" [title]="tour.title">
+  <div class="subheader">
+    <app-tour-progress [bars]="tour.bars"></app-tour-progress>
+  </div>
+</app-header>
 
 <div class="content-wrapper">
-  <div class="content">
-    <div class="flex justify-center" style="transform: translateY(-20px);">
-      <app-tour-progress [bars]="tour.bars"></app-tour-progress>
-    </div>
-
+  <div class="content" style="margin-top: 20px">
     <div *ngFor="let bar of tour.bars; let i = index" class="item">
       <div class="flex flex-col flex-1">
         <span class="flex-1">{{ i + 1 }}. {{ bar.title }}</span>

@@ -17,9 +17,7 @@ body {
   width: calc(100% - 40px);
   display: flex;
   justify-content: center;
-  padding: 20px;
-  padding-bottom: 50px;
-  padding-top: 70px;
+  padding: 70px 20px 100px 20px;
 }
 
 .content {
@@ -31,4 +29,13 @@ body {
 
 mat-dialog-container {
   position: relative;
+}
+
+.subheader {
+  background: var(--color-dark);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  align-items: center;
 }
