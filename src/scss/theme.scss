@@ -16,7 +16,7 @@ $kneipenpur-typography: mat-typography-config(
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $kneipenpur-primary: mat-palette($mat-amber);
-$kneipenpur-accent: mat-palette($mat-grey, A200, A100, A400);
+$kneipenpur-accent: mat-palette($mat-grey, 700);
 
 // The warn palette is optional (defaults to red).
 $kneipenpur-warn: mat-palette($mat-red);
