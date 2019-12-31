@@ -1,0 +1,13 @@
+<app-header title="Kneipen"> </app-header>
+<div class="content-wrapper">
+  <div class="content">
+    <div class="bar" *ngFor="let item of bars">
+      <div class="flex flex-col">
+        <span> {{ item.bar.title }}</span>
+        <app-rating [rating]="item.rating" [editable]="false"></app-rating>
+        <div class="tours">{{ item.tours.join(', ') }}</div>
+      </div>
+      <app-map *ngIf="item.bar.location" [bar]="item.bar"></app-map>
+    </div>
+  </div>
+</div>

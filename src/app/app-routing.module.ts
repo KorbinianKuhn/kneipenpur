@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./routes/tour-list/tour-list.module').then(mod => mod.TourListModule)
   },
   {
+    path: 'kneipen',
+    loadChildren: () => import('./routes/bars/bars.module').then(mod => mod.BarsModule)
+  },
+  {
     path: 'info',
     loadChildren: () => import('./routes/info/info.module').then(mod => mod.InfoModule)
   },

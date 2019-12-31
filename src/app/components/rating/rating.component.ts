@@ -9,6 +9,7 @@ export class RatingComponent implements OnInit {
   @Output() changed: EventEmitter<number> = new EventEmitter();
 
   @Input() rating: number;
+  @Input() editable: boolean = true;
 
   public stars: number[] = [1, 2, 3, 4, 5];
 
@@ -17,12 +18,16 @@ export class RatingComponent implements OnInit {
   ngOnInit() {}
 
   onClick(star: number) {
-    this.rating = star;
-    this.changed.emit(star);
+    if (this.editable) {
+      this.rating = star;
+      this.changed.emit(star);
+    }
   }
 
   onPress() {
-    this.rating = null;
-    this.changed.emit(null);
+    if (this.editable) {
+      this.rating = null;
+      this.changed.emit(null);
+    }
   }
 }
