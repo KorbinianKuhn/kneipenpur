@@ -1,6 +1,6 @@
 {
   "name": "kneipenpur",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -31,8 +31,8 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.802.1",
-    "@angular/cli": "~8.2.1",
+    "@angular-devkit/build-angular": "~0.803.29",
+    "@angular/cli": "~8.3.29",
     "@angular/compiler-cli": "~8.2.0",
     "@angular/language-service": "~8.2.0",
     "@types/jasmine": "~3.3.8",
