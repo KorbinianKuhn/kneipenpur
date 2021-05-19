@@ -6,6 +6,7 @@ import { MapModule } from 'src/app/components/map/map.module';
 import { RatingModule } from 'src/app/components/rating/rating.module';
 import { TourProgressModule } from 'src/app/components/tour-progress/tour-progress.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { TourInvitationDialogModule } from '../../../components/tour-invitation-dialog/tour-invitation-dialog.module';
 import { TourRoutingModule } from './tour-routing.module';
 import { TourComponent } from './tour.component';
 
@@ -19,7 +20,8 @@ import { TourComponent } from './tour.component';
     TourProgressModule,
     SharedModule,
     MapModule,
-    RatingModule
-  ]
+    RatingModule,
+    TourInvitationDialogModule,
+  ],
 })
 export class TourModule {}

@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, Meta } from '@angular/platform-browser';
 import { SwUpdate } from '@angular/service-worker';
+import { ICONS } from './constants/icon.constats';
 import { CountdownService, CountdownState } from './services/countdown.service';
-
-const CUSTOM_ICONS = ['logo', 'location'];
 
 @Component({
   selector: 'app-root',
@@ -33,10 +32,10 @@ export class AppComponent {
       },
     ]);
 
-    for (const icon of CUSTOM_ICONS) {
+    for (const icon of ICONS) {
       this.matIconRegistry.addSvgIcon(
-        `custom_${icon}`,
-        this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/icons/${icon}.svg`)
+        icon,
+        this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/svg/${icon}.svg`)
       );
     }
 

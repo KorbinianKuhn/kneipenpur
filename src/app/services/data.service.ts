@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { TOURS } from '../constants/tour.constants';
+import { StorageKey } from '../enums/storage.enum';
 import { StoredTourBar, Tour } from '../interfaces/common.interfaces';
 import { StorageService } from './storage.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
   public tours: Tour[];
@@ -13,11 +14,11 @@ export class DataService {
     this.tours = TOURS;
 
     try {
-      const store: StoredTourBar[] = this.storageService.getFromLocalStorage('bars', []);
+      const store: StoredTourBar[] = this.storageService.getFromLocalStorage(StorageKey.BARS, []);
       for (const bar of store) {
-        const tour = this.tours.find(o => o.id === bar.tourId);
+        const tour = this.tours.find((o) => o.id === bar.tourId);
         if (tour) {
-          const item = tour.bars.find(b => b.id === bar.barId);
+          const item = tour.bars.find((b) => b.id === bar.barId);
           if (item) {
             item.checked = bar.checked;
             item.rating = bar.rating;
@@ -34,7 +35,7 @@ export class DataService {
   }
 
   getTourDetail(id: string): Tour {
-    return this.tours.find(o => o.id === id);
+    return this.tours.find((o) => o.id === id);
   }
 
   saveState() {
@@ -45,11 +46,11 @@ export class DataService {
           tourId: tour.id,
           barId: bar.id,
           checked: bar.checked,
-          rating: bar.rating
+          rating: bar.rating,
         });
       }
     }
 
-    this.storageService.storeInLocalStorage('bars', store);
+    this.storageService.storeInLocalStorage(StorageKey.BARS, store);
   }
 }

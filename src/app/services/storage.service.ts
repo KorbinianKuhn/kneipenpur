@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
+import { StorageKey } from '../enums/storage.enum';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StorageService {
   constructor() {}
 
-  private getFromStorage(type: 'session' | 'local', key: string, defaultValue: any = null): any {
+  private getFromStorage(type: 'session' | 'local', key: StorageKey, defaultValue: any = null): any {
     const value = type === 'session' ? sessionStorage.getItem(key) : localStorage.getItem(key);
     if (value === null) {
       return defaultValue;
@@ -18,41 +19,41 @@ export class StorageService {
     }
   }
 
-  private storeInStorage(type: 'session' | 'local', key: string, value): void {
+  private storeInStorage(type: 'session' | 'local', key: StorageKey, value): void {
     type === 'session'
       ? sessionStorage.setItem(key, JSON.stringify(value))
       : localStorage.setItem(key, JSON.stringify(value));
   }
 
-  getFromSessionStorage(key: string, defaultValue: any = null): any {
+  getFromSessionStorage(key: StorageKey, defaultValue: any = null): any {
     return this.getFromStorage('session', key, defaultValue);
   }
 
-  getFromLocalStorage(key: string, defaultValue: any = null): any {
+  getFromLocalStorage(key: StorageKey, defaultValue: any = null): any {
     return this.getFromStorage('local', key, defaultValue);
   }
 
-  storeInSessionStorage(key: string, value: any): void {
+  storeInSessionStorage(key: StorageKey, value: any): void {
     this.storeInStorage('session', key, value);
   }
 
-  storeInLocalStorage(key: string, value: any): void {
+  storeInLocalStorage(key: StorageKey, value: any): void {
     this.storeInStorage('local', key, value);
   }
 
-  removeFromSessionStorage(key: string): void {
+  removeFromSessionStorage(key: StorageKey): void {
     sessionStorage.removeItem(key);
   }
 
-  removeFromLocalStorage(key: string): void {
+  removeFromLocalStorage(key: StorageKey): void {
     localStorage.removeItem(key);
   }
 
-  getFromSessionOrLocalStorage(key: string, defaultValue: any = null): any {
+  getFromSessionOrLocalStorage(key: StorageKey, defaultValue: any = null): any {
     return this.getFromSessionStorage(key) || this.getFromLocalStorage(key) || defaultValue;
   }
 
-  removeFromSessionAndLocalStorage(key: string): void {
+  removeFromSessionAndLocalStorage(key: StorageKey): void {
     this.removeFromSessionStorage(key);
     this.removeFromLocalStorage(key);
   }

@@ -2,6 +2,7 @@ export interface Tour {
   id: string;
   title: string;
   date: Date;
+  invitation?: string;
   bars: Bar[];
 }
 

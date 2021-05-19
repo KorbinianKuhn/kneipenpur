@@ -6,6 +6,9 @@
 
 <div class="content-wrapper">
   <div class="content" style="margin-top: 20px">
+    <div class="flex justify-center">
+      <button *ngIf="tour.invitation" mat-flat-button (click)="showInvitation()">Einladung lesen</button>
+    </div>
     <div *ngFor="let bar of tour.bars; let i = index" class="item">
       <div class="flex flex-col flex-1">
         <span class="flex-1">{{ i + 1 }}. {{ bar.title }}</span>
