@@ -1,11 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-map-popup',
   templateUrl: './map-popup.component.html',
-  styleUrls: ['./map-popup.component.scss']
+  styleUrls: ['./map-popup.component.scss'],
 })
 export class MapPopupComponent implements OnInit {
   public url: SafeResourceUrl;
